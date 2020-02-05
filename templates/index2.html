@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   <title>Title</title>
+</head>
+<body>
+<div class="page-title title-buttons">
+<h1>Mi carrito de compras - <span>Haz click en “Finalizar compra” para ingresar tus datos.</span></h1>
+<div class="hidden"></div>
+<button type="button" title="Finalizar la compra" class="button btn-proceed-checkout btn-checkout" onclick="if (!window.__cfRLUnblockHandlers) return false; cartContollerObject.checkCartStockAndPrice('https:','https:');gaSendEvent('btn Finalizar compra','Cart');">
+<span>
+<span>Finalizar compra</span>
+</span>
+</button>
+<a href="https://tiendamia.com/pe/" style="text-align:center;" class="agregar_mas_arriba" onclick="if (!window.__cfRLUnblockHandlers) return false; gaSendEvent('btn Continua comprando','Cart');"><span class="hidden flecha-continuar-comprando"></span>Continúa comprando y ahorra en tu envío</a>
+<div class="clear"></div>
+<ul class="checkout-types test1">
+<li> <button type="button" title="Finalizar compra" class="button btn-proceed-checkout btn-checkout" onclick="if (!window.__cfRLUnblockHandlers) return false;  cartContollerObject.checkCartStockAndPrice('https://tiendamia.com/pe/checkout/cart/checkStockAndPrice/','https://tiendamia.com/pe/checkout/onepage/');gaSendEvent('btn Finalizar compra','Cart');   ">
+<span>
+<span>Finalizar compra</span>
+</span>
+</button>
+</li>
+</ul>
+<form action="https://tiendamia.com/pe/checkout/cart/updatePost/" method="post" class="update_cart_form">
+<fieldset>
+<div id="shopping-cart-table2" class="data-table2 cart-table2">
+<table id="shopping-cart-table" class="data-table cart-table">
+<colgroup><col width="1">
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup><thead>
+<tr class="first last">
+<td colspan="2" class="a-center">Producto</td>
+<td class="a-center">Cantidad</td>
+<td class="a-center">Eliminar</td>
+<td class="a-center">Valor Unitario
+</td>
+<td class="a-center last">Valor Total</td>
+</tr>
+</thead>
+<tbody class="notranslate">
+<tr class="first odd">
+
+<td class="block-img test">
+<div style=" text-align:center;">
+<a href="https://tiendamia.com/pe/producto?amz=B014W8J6XM&amp;pName=Casio-Men039s-SGW450H2BCF-Twin-Sensor-AnalogDigital-Black-Watch">
+<img src="https://images-na.ssl-images-amazon.com/images/I/51xCP7YWKGL._SX500_SY500_CR,0,0,500,500_.jpg" style=" max-width:100px; max-height:100px;">
+</a>
+</div>
+</td>
+
+<td>
+<h2 class="product-name">
+<a href="https://tiendamia.com/pe/producto?amz=B014W8J6XM&amp;pName=Casio-Men039s-SGW450H2BCF-Twin-Sensor-AnalogDigital-Black-Watch">
+Casio Men039s SGW450H2BCF Twin Sensor AnalogDigital Black Watch </a>
+</h2>
+<ul class="item-options">
+<li>
+Peso:
+<em>0.225 kg</em>
+</li>
+</ul>
+</td>
+<td class="a-center cart_qty">
+<div class="cart-qty">
+<button type="button" name="update_cart_action" value="update_qty" title="Actualizar" class="button btn-update restar_uno" onclick="if (!window.__cfRLUnblockHandlers) return false; restar_uno(22655784)"><span>-</span></button>
+<input name="cart[22655784][qty]" value="1" size="4" title="Cantidad" class="input-text qty" maxlength="12" id="22655784" readonly="readonly">
+<button type="button" name="update_cart_action" value="update_qty" title="Actualizar" class="button btn-update sumar_uno" onclick="if (!window.__cfRLUnblockHandlers) return false; sumar_uno(22655784)"><span>+</span></button>
+</div>
+</td>
+<td class="a-center td-delete">
+<div class="cart-remove"><a href="https://tiendamia.com/pe/checkout/cart/delete/id/22655784/form_key/Uy69Zssbncmhkuuh/uenc/aHR0cHM6Ly90aWVuZGFtaWEuY29tL3BlL2NoZWNrb3V0L2NhcnQv/" title="Eliminar" class="btn-remove2">Eliminar</a></div>
+</td>
+<td class="a-center notranslate">
+<span class="cart-price">
+<span class="price dollar_price">
+U$S 36.59 </span>
+<span class="price currency_price">
+S/ 129 </span>
+</span>
+</td>
+<td class="a-center notranslate last">
+<span class="price">
+<span class="price dollar_price">
+U$S 36.59 </span>
+<span class="price currency_price">
+S/ 129 </span>
+</span>
+</td>
+</tr>
+<style type="text/css">
+    .item-options li img.btn {max-width: 12px;margin-left: 3px;margin-top: 2px;}
+    .item-options li img.tooltip_producto_mobile {display: none;}
+    .tooltip.in {opacity: 0.9;}
+    @media only screen and (min-width: 980px) and (max-width: 1199px) {
+    }
+    @media only screen and (min-width: 768px) and (max-width: 979px) {
+        .item-options li img.tooltip_producto {display: none;}
+        .item-options li img.tooltip_producto_mobile {display: inline;}
+    }
+    @media only screen and (max-width: 767px) {
+        .item-options li img.tooltip_producto {display: none;}
+        .item-options li img.tooltip_producto_mobile {display: inline;}
+    }
+    #shopping-cart-table2 .data-table td.cart_qty { width: 150px;}
+</style>
+<script type="text/javascript">$j(function(){$j('.tooltip_producto').tooltip();$j('.tooltip_producto_mobile').tooltip();});</script>
+<tr class="last even">
+
+<td class="block-img test">
+<div style=" text-align:center;">
+<a href="https://tiendamia.com/pe/producto?amz=B014W8J6XM&amp;pName=Casio-Men039s-SGW450H2BCF-Twin-Sensor-AnalogDigital-Black-Watch">
+<img src="https://images-na.ssl-images-amazon.com/images/I/51xCP7YWKGL._SX500_SY500_CR,0,0,500,500_.jpg" style=" max-width:100px; max-height:100px;">
+</a>
+</div>
+</td>
+
+<td>
+<h2 class="product-name">
+<a href="https://tiendamia.com/pe/producto?amz=B014W8J6XM&amp;pName=Casio-Men039s-SGW450H2BCF-Twin-Sensor-AnalogDigital-Black-Watch">
+Casio Men039s SGW450H2BCF Twin Sensor AnalogDigital Black Watch </a>
+</h2>
+<ul class="item-options">
+<li>
+Peso:
+<em>0.225 kg</em>
+</li>
+</ul>
+</td>
+<td class="a-center cart_qty">
+<div class="cart-qty">
+<button type="button" name="update_cart_action" value="update_qty" title="Actualizar" class="button btn-update restar_uno" onclick="if (!window.__cfRLUnblockHandlers) return false; restar_uno(22655808)"><span>-</span></button>
+<input name="cart[22655808][qty]" value="1" size="4" title="Cantidad" class="input-text qty" maxlength="12" id="22655808" readonly="readonly">
+<button type="button" name="update_cart_action" value="update_qty" title="Actualizar" class="button btn-update sumar_uno" onclick="if (!window.__cfRLUnblockHandlers) return false; sumar_uno(22655808)"><span>+</span></button>
+</div>
+</td>
+<td class="a-center td-delete">
+<div class="cart-remove"><a href="https://tiendamia.com/pe/checkout/cart/delete/id/22655808/form_key/Uy69Zssbncmhkuuh/uenc/aHR0cHM6Ly90aWVuZGFtaWEuY29tL3BlL2NoZWNrb3V0L2NhcnQv/" title="Eliminar" class="btn-remove2">Eliminar</a></div>
+</td>
+<td class="a-center notranslate">
+<span class="cart-price">
+<span class="price dollar_price">
+U$S 36.59 </span>
+<span class="price currency_price">
+S/ 129 </span>
+</span>
+</td>
+<td class="a-center notranslate last">
+<span class="price">
+<span class="price dollar_price">
+U$S 36.59 </span>
+<span class="price currency_price">
+S/ 129 </span>
+</span>
+</td>
+</tr>
+<style type="text/css">
+    .item-options li img.btn {max-width: 12px;margin-left: 3px;margin-top: 2px;}
+    .item-options li img.tooltip_producto_mobile {display: none;}
+    .tooltip.in {opacity: 0.9;}
+    @media only screen and (min-width: 980px) and (max-width: 1199px) {
+    }
+    @media only screen and (min-width: 768px) and (max-width: 979px) {
+        .item-options li img.tooltip_producto {display: none;}
+        .item-options li img.tooltip_producto_mobile {display: inline;}
+    }
+    @media only screen and (max-width: 767px) {
+        .item-options li img.tooltip_producto {display: none;}
+        .item-options li img.tooltip_producto_mobile {display: inline;}
+    }
+    #shopping-cart-table2 .data-table td.cart_qty { width: 150px;}
+</style>
+<script type="text/javascript">$j(function(){$j('.tooltip_producto').tooltip();$j('.tooltip_producto_mobile').tooltip();});</script>
+</tbody>
+</table>
+</div>
+<script type="text/javascript">decorateTable('shopping-cart-table')</script>
+</fieldset>
+</form></div>
+</body>
+</html>

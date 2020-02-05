@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% block title %}productos{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" href="css/material-design-iconic-font.css">
+    <link rel="stylesheet" href="css/styles.css">
+<h2>Detalle del Producto</h2>
+<body>
+<div class="container">
+        <div class="columns">
+            <div class="column is-two-fifths-desktop">
+                <div class="slider" id="slider">
+                    <div class="slider-img-container">
+                        <img src="img\imgM-2.jpg" alt="camiseta" class="active slider-item">
+                    </div>
+
+                </div>
+            </div>
+            <div class="column">
+                <h3 class="is-size-4">Sudadera Clasica</h3>
+                <div class="course-rating-container">
+                </div>
+                <h2 class="price is-size-4"><sup>$</sup>89.99</h2>
+                <p class="has-text-grey"> <strong>Disponibilidad:</strong> En stock</p>
+                <p class="has-text-grey"><strong>Código del procuto: </strong>#56843265</p>
+                <p class="text-default">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                    repellat,
+                    sequi doloremque accusamus, voluptates nihil commodi necessitatibus, ullam
+                    fugit ea a illo maxime repudiandae?</p>
+                <form action="#" class="form-control">
+                    <div class="columns is-multiline">
+
+                        <div class="column is-one-third">
+                            <label for="quality">Cantidad</label>
+                            <input class="form-control-field" type="number">
+                        </div>
+                        <div class="column is-full is-marginless">
+                            <button class="btn btn-default btn-outline"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
+                            <button class="btn btn-default btn-outline"><i class="fas fa-cart-plus"></i> Seguir Comprando</button>
+                            <button class="btn btn-default btn-outline"><i class="fas fa-cart-plus"></i> Terminar</button>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+</div>
+
+</body>
+{%  endblock %}

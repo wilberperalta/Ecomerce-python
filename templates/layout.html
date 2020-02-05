@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/estilos_home.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body class="loggedin">
+    <nav class="navtop">
+        <div>
+            <h1>Bienvenido </h1>
+            <a href="{{url_for('home')}}"><i class="fas fa-user-home"></i>Home</a>
+            <a href="{{url_for('categorias')}}"><i class="fas fa-stream"></i>Categorias</a>
+            <a href="{{url_for('productos')}}"><i class="fas fa-apple-alt"></i>Productos</a>
+            <a href="{{url_for('logout')}}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            <a href="{{url_for('profile')}}"><img style="width: 28%;height: 5vh;border-radius: 50%;" src="{{ url_for('static', filename='') }}{{  usuario['foto']}}">{{usuario['usuario']}} </a>
+
+        </div>
+    </nav>
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

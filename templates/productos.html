@@ -1,0 +1,184 @@
+{% extends 'layout.html' %}
+{% block title %}productos{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<div>
+<h4>Mantenimiento de Productos</h4>
+    <hr>
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#agregarproductos">
+    Agregar productos
+</button>
+
+<table class="table table-hover">
+    <tr>
+        <th>codigo</th>
+        <th>categoria</th>
+        <th>nombre</th>
+        <th>descripcion</th>
+        <th>precio</th>
+        <th>stock</th>
+        <th>foto</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tbody>
+    {% for item in prod %}
+    <tr>
+        <td>{{item.cod}}</td>
+        <td>{{item.categoria}}</td>
+        <td>{{item.nombre}}</td>
+        <td>{{item.descripcion}}</td>
+        <td>{{item.precio}}</td>
+        <td>{{item.stock}}</td>
+        <td>
+            <img src="{{url_for('static',filename=item.foto)}}" width="70">
+            <!--<img src="{{url_for('static',filename='img/'+item.foto)}}" class="foto"  alt="">-->
+        </td>
+
+        <td><a href="#!" class="btn btn-warning" data-toggle="modal"
+               data-target="#editarproducto{{item.cod}}">Editar</a></td>
+        <td><a href="/eliminar_producto/{{ item.cod }}" class="btn btn-danger"
+               onclick="return confirm('¿Esta seguro de ELIMINAR?')">Eliminar</a></td>
+
+        <div id="editarproducto{{item.cod}}" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Por Favor Inserte la Data</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{url_for('modificarproductos')}}" method="post" enctype="multipart/form-data">
+
+                            <div class="form-group" style="display: none;">
+                              <label>Codigo:</label>
+                              <input type="text" class="form-control" name="codigo" required="1" value="{{item.codigo}}">
+                           </div>
+                            <div class="form-group">
+                                <label>Categoria:</label>
+                                <input type="text" class="form-control" name="categoria" required="1"value="{{item.categoria}}">
+                            </div>
+                            <div class="form-group">
+                                <label>Nombre:</label>
+                                <input type="text" class="form-control" name="nombre" required="1"value="{{item.nombre}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <textarea class="form-control" id="descripcion" name="descripcion" rows="3">{{item.descripcion}}</textarea>
+                            </div>
+                            <div class="form-group row">
+                                <label for="precio" class="col-2 col-form-label">Precio</label>
+                                <div class="col-10">
+                                    <input class="form-control" type="number" value={{item.precio}} id="precio" name="precio">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="stock" class="col-2 col-form-label">Stock</label>
+                                <div class="col-10">
+                                    <input class="form-control" type="number" value={{item.stock}} id="stock" name="stock">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="imagenfile">Escoja la Imagen a Subir</label>
+                                <input type="file" class="form-control-file" id="imagenfile" name="imagenfile" accept=".jpg, .jpeg, .png" src="{{item.foto}}" onchange="loadImg(event)">
+                            </div>
+                            <div class="form-group">
+                                <img src={{rutaImg}}>
+                            </div>
+
+
+                            <div class="form-group">
+                                <button class="btn btn-primary" type="submit">Registrar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </tr>
+
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+<!-- Modal -->
+<div id="agregarproductos" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Por Favor Inserte la Data</h4>
+            </div>
+            <div class="modal-body">
+                <form action="{{url_for('registrarproductos')}}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Categoria:</label>
+                        <input type="text" class="form-control" name="categoria" required="1">
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre:</label>
+                        <input type="text" class="form-control" name="nombre" required="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripcion</label>
+                        <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
+                    </div>
+                    <div class="form-group row">
+                        <label for="precio" class="col-2 col-form-label">Precio</label>
+                        <div class="col-10">
+                            <input class="form-control" type="number" value="0" id="precio" name="precio">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="stock" class="col-2 col-form-label">Stock</label>
+                        <div class="col-10">
+                            <input class="form-control" type="number" value="0" id="stock" name="stock">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="imagenfile">Escoja la Imagen a Subir</label>
+                        <input type="file" class="form-control-file" id="imagenfile" name="imagenfile">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Registrar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%  endblock %}
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

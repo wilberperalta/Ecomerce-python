@@ -1,0 +1,154 @@
+{% extends 'layout.html' %}
+{% block title %} Home {% endblock%}
+{% block content %}
+<link rel="stylesheet" href="D:\ESTUDIOS\BootCamp\usb2\nuevologin\6ECOMMERCE_REGISTRAR\static\css\estilos_home.css">
+
+<header>
+<div id="banner">
+</div>
+</header>
+<body>
+<div class="container-fluid">
+
+
+	<section id="principal">
+		<div id="contenedor" style="background-color: null">
+
+			<div id="lateral">
+				<div class="list-group tit_lateral">
+ 		 <a href="#" class="list-group-item list-group-item-action active">
+    		CATEGORIAS DE
+  		</a>
+		  <a href="#" class="list-group-item list-group-item-action">Polos para hombres</a>
+		  <a href="#" class="list-group-item list-group-item-action">Poleras para mujeres</a>
+		  <a href="#" class="list-group-item list-group-item-action">Polos para niños</a>
+		  <a href="#" class="list-group-item list-group-item-action disabled">Polos para niñas</a>
+		  <a href="#" class="list-group-item list-group-item-action">Polos para bebes</a>
+				</div>
+
+			</div>
+			<div id="contenido">
+				<div class="titulo">Polos para Damas</div>
+				<div>
+					<div class="cuadro">
+						<img src="img/imgM-1.jpg" />
+						<button type="button" class="btn titulo" data-toggle="modal" data-target="#exampleModal">COMPRAR</button>
+					</div>
+					<div class="cuadro">
+						<img src="img\imgM-2.jpg" />
+						<button type="button" class="btn titulo" data-toggle="modal" ><a href="{{url_for('product')}}">VER</button>
+
+					</div>
+					<div class="cuadro">
+						<img src="img/imgM-3.jpg" />
+						<div class="titulo">COMPRAR</div>
+					</div>
+					<div class="cuadro">
+						<img src="img/imgM-4.jpg" />
+						<div class="titulo">COMPRAR</div>
+					</div>
+				</div>
+				<div class="titulo">Polos para Varones</div>
+				<div>
+					<div class="cuadro">
+						<img src="img/imgH-1.jpg" />
+						<div class="titulo">COMPRAR</div>
+					</div>
+					<div class="cuadro">
+						<img src="img/imgH-2.jpg" />
+						<div class="titulo">COMPRAR</div>
+					</div>
+					<div class="cuadro">
+						<img src="img/imgH-3.jpg" />
+						<div class="titulo">COMPRAR</div>
+					</div>
+					<div class="cuadro">
+						<img src="img/imgH-4.jpg" />
+						<div class="titulo">COMPRAR</div>
+					</div>
+				</div>
+				<div class="titulo">Polos para Niños</div>
+				<div>
+					<div class="cuadro">
+						<img src="img/imgN-1.jpg" />
+						<div class="titulo">COMPRAR</div>
+					</div>
+					<div class="cuadro">
+						<img src="img/imgN-1.jpg" />
+						<div class="titulo">COMPRAR</div>
+					</div>
+					<div class="cuadro">
+						<img src="img/imgN-1.jpg" />
+						<div class="titulo">COMPRAR</div>
+					</div>
+					<div class="cuadro">
+						<img src="img/imgN-1.jpg" />
+						<div class="titulo">COMPRAR</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+	</section>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Carrito de Compra</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			X
+        </button>
+      </div>
+      <div class="modal-body">
+		 <p>Estimado,{{username}} indique la cantidad y agregue al carrito</p>
+		    <div class="container">
+        <div class="columns">
+            <div class="column is-two-fifths-desktop">
+                <div class="slider" id="slider">
+                    <div class="slider-img-container">
+                        <img src="img/item-1.png" alt="camiseta" class="active slider-item">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <h3 class="is-size-4">Classic Sweatshirt</h3>
+                <h2 class="price is-size-4"><sup>$</sup>89.99</h2>
+                <p class="has-text-grey"> <strong>Disponibilidad:</strong> En stock</p>
+                <p class="has-text-grey"><strong>Código del procuto: </strong>#56843265</p>
+                <p class="text-default">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                    repellat,sequi doloremque accusamus, a illo maxime ?</p>
+                <form action="#" class="form-control">
+                    <div class="columns is-multiline">
+                        <div class="column is-one-third">
+                            <label for="quality">Cantidad</label>
+                            <input class="form-control-field" type="number">
+                        </div>
+                        <div class="column is-full is-marginless">
+                            <button class="btn btn-default btn-outline"><i class="zmdi zmdi-shopping-cart"></i>
+                                Agregar al carrito</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+</body>
+{% endblock %}

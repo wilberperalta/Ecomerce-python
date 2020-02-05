@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+{% block title %}productos{% endblock %}
+{% block content %}
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<div>
+<h2>Mantenimiento de Categorias</h2>
+    <hr>
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalexample"> Agregar Categorias</button>
+
+<table class="table table-hover">
+    <tr>
+        <th>Codigo</th>
+        <th>Nombre</th>
+        <th>Estado</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tbody>
+    {% for item in categ %}
+    <tr>
+        <td scope="row">{{item.codCategoria}}</td>
+        <td>{{item.nombre}}</td>
+        <td>{{item.estado}}</td>
+
+        <td><a href="#!" class="btn btn-warning" data-toggle="modal"
+               data-target="#editarcategoria{{item.codCategoria}}">Actualizar</a></td>
+        <td><a href="/eliminar_categoria/{{ item.codCategoria }}" class="btn btn-danger"
+               onclick="return confirm('¿Esta seguro de ELIMINAR?')">Eliminar</a></td>
+
+ </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+
+ <div class="modal fade" id="modalexample" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Por Favor Inserte la Data</h4>
+            </div>
+            <div class="modal-body">
+                <form action="{{url_for('registrarcategorias')}}" method="post" enctype="multipart/form-data">
+                            <div class="form-group" style="display: none;">
+                              <label>Codigo:</label>
+                              <input type="text" class="form-control" name="codigo" required="1" >
+                           </div>
+                            <div class="form-group">
+                                <label>Nombre:</label>
+                                <input type="text" class="form-control" name="nombre" required="1">
+                            </div>
+                            <div class="form-group">
+                                <label>Estado:</label>
+                                <input type="text" class="form-control" name="nombre" required="1">
+                            </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Registrar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%  endblock %}

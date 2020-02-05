@@ -1,0 +1,106 @@
+body{
+	font-family: Arial;
+	margin: 0;
+	font-size: 14px;
+}
+a {
+	text-decoration: none;
+}
+header #menu{
+	background: red;
+	padding: 20px 12px 10px 12px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+}
+header #menu a{
+	color: #ffffff;
+}
+header #banner{
+	background: yellow;
+	background-image: url("../img/banner.jpg");
+	background-position: center;
+	background-size: cover;
+	height: 500px;
+	text-align: center;
+}
+header #banner #proximo{
+	padding-top: 300px;
+	color: #FFF;
+	font-size: 34px;
+	font-weight: bold;
+}
+#principal #contenedor {
+	width: 1140px;
+	background: red;
+	margin: 0 auto;
+}
+#principal #contenido{
+	float: left;
+	margin-bottom: 20px;
+	width: 830px;
+}
+#principal #contenido .cuadro{
+	width: 204px;
+	text-align: center;
+	display: inline-block;
+}
+#principal #contenido .cuadro .titulo{
+	font-size: 18px;
+	color: #666;
+}
+#principal #contenido img{
+	border-radius: 10px;
+}
+#principal #contenido .titulo {
+	color: red;
+	font-size: 30px;
+	font-weight: bold;
+	margin: 20px 0 10px 0;
+}
+/* Estilos Lateral */
+#principal #lateral{
+	float: right;
+	width: 300px;
+	margin-top: 20px;
+}
+#principal #lateral .tit_lateral {
+	background: red;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	padding: 7px 4px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	clear: both;
+}
+#principal #lateral .cuadro_lat {
+	height: 100px;
+	margin-bottom: 10px;
+}
+#principal #lateral .cuadro_lat .detalle{
+	margin-left: 10px;
+	color: #666;
+}
+#principal #lateral .cuadro_lat .detalle h3{
+	color: #FF482B;
+	margin: 6px 0;
+}
+#principal #lateral .cuadro_lat .detalle .calificacion {
+	color: #FF482B;
+}
+#principal #lateral .cuadro_lat .detalle .calificacion span{
+	font-size: 17px;
+}
+#principal #lateral .cuadro_lat .info{
+	float: left;
+}
+footer {
+	clear: both;
+	background: #000;
+	color: #FFF;
+	padding: 10px;
+	font-size: 12px;
+	text-align: center;
+}
